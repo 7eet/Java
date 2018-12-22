@@ -1,3 +1,10 @@
+/*
+*	Program contains One Person class and one Main class.
+*	This program displays information about Person
+*	if person's age is greater than and equals to 30  AND person is Male.
+*	This above condition is checks by Lambda Expression.
+*/
+
 class Person {
 	private String name;
 	private int age;
