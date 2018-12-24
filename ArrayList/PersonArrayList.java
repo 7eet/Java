@@ -66,7 +66,6 @@ public class PersonArrayList{
 		
 		// if you comment equals method then
 		// contains() , indexOf() and lastIndexOf() displays false.
-		//It means it doesn't contain this person.  
 		
 		System.out.println("contains person (Jef,23,M): "+ pList.contains(new Person("Jef",23,'M')));   
 		System.out.println("first occurence of (Bill,40,F): "+pList.indexOf(new Person("Bill",40,'F')));
