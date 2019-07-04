@@ -4,7 +4,7 @@ import static java.lang.System.out;
 public class PathDemo{
 
 	public static void main(String[] args){
-		Path path = Paths.get("/home/dapps/Desktop/Tppp.java");
+		Path path = Paths.get("Tppp.java");
 				
 		System.out.println("Path: "+path.toString());
 		
