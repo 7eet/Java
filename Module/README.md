@@ -7,33 +7,32 @@
 
 1. **output**
   
-  - **classes -** _It contains all the compiled classses_
+    - **classes -** _It contains all the compiled classses_
  
-  - **lib -** _It contains all the jar files_
+    - **lib -** _It contains all the jar files_
 
 2. **src**
   
-  - **Hello -** _This directory contains two java files_
+    - **Hello -** _This directory contains two java files_
  
     - `module-info.java` _- This module requires World module._
    
     - `com/greet/hello/Hello.java` _- This is a simple java file which prints_ **Hello World**
  
-  - **World -** _This directory also contians two java files_
+    - **World -** _This directory also contians two java files_
  
     - `module-info.java` _- It exports package_ **com.greet.world** _so that other module which requires this module can access only public classes available in the package._
+ 
+    - `com/greet/world/World.java` _- A simple java file with a public method which return_ **"World"**.
 
    > **_NOTE:_** If you do not export the package you get the compilation error.
    
-   - `com/greet/world/World.java` _- A simple java file with a public method which return_ **"World"**.
 
 
 ### Compile and Create jar file
 
   * `$ javac -d output/classses/World \
-
 		src/World/module-info.java \
-
 		src/World/com/greet/World.java
 	`
 
@@ -45,11 +44,8 @@
 It creates jar file of `output/classses/World/` directory and store in `output/lib` and the name of jar file is **world.jar**	
 
   * `$ javac -d output/classses/Hello \ 
-
-		-p output/classses \
- 
+		-p output/classses \ 
 		src/Hello/module-info.java \
-
 		src/Hello/com.greet/hello/Hello.java
 	`
 
