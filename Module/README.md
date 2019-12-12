@@ -1,7 +1,7 @@
 ## How to compile and run module application through terminal
 
-### `module-info.java` is module descriptor file. Which specifies that this module is dependent to any other module or this module exports the package so that other module can access the public classes which are in that package
-
+<b> `module-info.java` is module descriptor file. Which specifies that this module is dependent to any other module or this module exports the package so that other module can access the public classes which are in that package
+</b>
 
 ### Directories in this repo
 
@@ -25,30 +25,35 @@
 
    > **_NOTE:_** If you do not export the package you get the compilation error.
    
-    - `com/greet/world/World.java` _- A simple java file with a public method which return_ **"World"**.
+   - `com/greet/world/World.java` _- A simple java file with a public method which return_ **"World"**.
 
 
 ### Compile and Create jar file
 
   * `$ javac -d output/classses/World \
+
 		src/World/module-info.java \
+
 		src/World/com/greet/World.java
 	`
 
-Above line compile both java file and place compiled file in `output/classses/World`.	
+<i>Above line compile both java file and place compiled file in `output/classses/World`.</i>	
   
 
   * `$ jar -cf output/lib/world.jar -C output/classses/World .`
 
 It creates jar file of `output/classses/World/` directory and store in `output/lib` and the name of jar file is **world.jar**	
 
-  * `$ javac -d output/classses/Hello \
+  * `$ javac -d output/classses/Hello \ 
+
 		-p output/classses \
+ 
 		src/Hello/module-info.java \
+
 		src/Hello/com.greet/hello/Hello.java
 	`
 
-`-p` is used for module path because hello module depends on world module.
+`-p` is used for module path because world module is in `output/classses` and  hello module depends on world module.
 
   * `$ jar -cf output/lib/second.jar -C output/classses/Hello .`
 
@@ -57,10 +62,10 @@ It creates jar file of `output/classses/World/` directory and store in `output/l
 
  * ` java -p $modulepath -m $moduleName/$PackageWithMainFile`
 
-> above is the synatx to run the module application. $modulepath is path of the module,  $moduleName is the module name of main application file and $PackageWithMainFile is full package name with the name of main application file respectively.
+> above is the synatx to run the module application.<br> $modulepath is path of the module,  $moduleName is the module name of main application file <br> $PackageWithMainFile is full package name with the name of main application file respectively.
 
- * `java -p output/classses -m hello/com.greet.hello.Hello`
-
+ * `java -p output/classses -m hello/com.greet.hello.Hello`<br>
+ **Output:**<br>
    `Hello World`
 
 
