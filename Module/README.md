@@ -36,15 +36,15 @@
 		src/World/com/greet/World.java
 	`
 
-<i>Above line compile both java file and place compiled file in `output/classses/World`.</i>	
+Above line compile both java file and place compiled file in `output/classses/World`.	
   
 
   * `$ jar -cf output/lib/world.jar -C output/classses/World .`
 
-It creates jar file of `output/classses/World/` directory and store in `output/lib` and the name of jar file is **world.jar**	
+It creates jar file of `output/classses/World/` and store in `output/lib` and the name of jar file is **world.jar**	
 
   * `$ javac -d output/classses/Hello \ 
-		-p output/classses \ 
+		-p output/classses/World \ 
 		src/Hello/module-info.java \
 		src/Hello/com.greet/hello/Hello.java
 	`
@@ -56,12 +56,18 @@ It creates jar file of `output/classses/World/` directory and store in `output/l
 
 ### Run the application
 
- * ` java -p $modulepath -m $moduleName/$PackageWithMainFile`
+ * `$ java -p $modulepath -m $moduleName/$PackageWithMainFile`
 
 > above is the synatx to run the module application.<br> $modulepath is path of the module,  $moduleName is the module name of main application file <br> $PackageWithMainFile is full package name with the name of main application file respectively.
 
- * `java -p output/classses -m hello/com.greet.hello.Hello`<br>
- **Output:**<br>
-   `Hello World`
+ * `$ java -p output/classses -m hello/com.greet.hello.Hello`<br>
+ 
+  **Output:**<br>
+  
+  `Hello World`
+
+ * `$ java -p output/lib/world.jar:output/lib/hello.jar -m hello/com.greet.hello.Hello`
+
+Above line shows how to run application with jar files.
 
 
